@@ -7,6 +7,9 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comment"
 		}
 	],
 	"repository": {
@@ -26,6 +29,16 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"comment": {
+			"name": "comment.line.cosmos",
+			"begin": "(?<!/)#(?:(?!/)|(?=#))",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.cosmos"
+				}
+			},
+			"end": "(?=$)"
 		}
 	},
 	"scopeName": "source.cosmos"
