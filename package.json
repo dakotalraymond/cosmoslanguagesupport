@@ -1,0 +1,26 @@
+{
+    "name": "cosmoslanguagesupport",
+    "displayName": "CosmosLanguageSupport",
+    "description": "Language support for COSMOS definition files",
+    "version": "0.0.1",
+    "publisher": "dakotaraymond",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cosmos",
+            "aliases": ["COSMOS", "cosmos"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cosmos",
+            "scopeName": "source.cosmos",
+            "path": "./syntaxes/cosmos.tmLanguage.json"
+        }]
+    }
+}
