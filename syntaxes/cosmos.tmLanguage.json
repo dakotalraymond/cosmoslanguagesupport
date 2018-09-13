@@ -10,13 +10,22 @@
 		},
 		{
 			"include": "#comment"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#other"
+		},
+		{
+			"include": "#constant"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.cosmos",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(INT|UINT|FLOAT|STRING|BLOCK|DERIVED)\\b"
 			}]
 		},
 		"strings": {
@@ -31,7 +40,7 @@
 			]
 		},
 		"comment": {
-			"name": "comment.line.cosmos",
+			"name": "comment.line.number-sign.cosmos",
 			"begin": "(?<!/)#(?:(?!/)|(?=#))",
 			"beginCaptures": {
 				"0": {
@@ -39,6 +48,22 @@
 				}
 			},
 			"end": "(?=$)"
+		},
+		"storage": {
+			"name": "storage.cosmos",
+			"match": "\\b(TELEMETRY|COMMAND)\\b"
+		},
+		"other": {
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "\\b(APPEND_ITEM|APPEND_ID_ITEM|APPEND_ARRAY_ITEM|APPEND_ID_PARAMETER|APPEND_PARAMETER)\\b"	
+			}]
+		},
+		"constant": {
+			"patterns": [{
+				"name": "constant.language",
+				"match": "\\b(TRUE|FALSE)\\b"
+			}]
 		}
 	},
 	"scopeName": "source.cosmos"
